@@ -1,4 +1,5 @@
 class BoardPrinter
+  
   def initialize(board_spaces)
     @board_spaces = board_spaces
     @board_width = 97

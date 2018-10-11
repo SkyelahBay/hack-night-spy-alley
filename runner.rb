@@ -20,6 +20,8 @@ puts
 puts score_card_printer.to_s
 
 game.startGame()
+puts game.players[0].returnInfo
+puts game.players[1].returnInfo
 
 
 

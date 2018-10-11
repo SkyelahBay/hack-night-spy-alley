@@ -1,7 +1,12 @@
 require_relative 'spy'
 
 class Game
-  attr_reader :player1, :player2, :rollVal
+  attr_reader :rollVal
+  attr_accessor :players
+
+  def initialize
+    @players = []
+  end
 
 
   def printIntro
@@ -9,24 +14,25 @@ class Game
   end
 
   def startGame
-    getPlayerNames
-    pickIdentity
+    2.times { getPlayerInfo }
   end
 
   def pickIdentity(nation)
-    @
+    
   end
 
   def take_turn
     @rollVal = roll_dice
   end
 
-  def getPlayerName
-    puts 'please enter your name player 1'
-    player1 = gets.chomp
+  def getPlayerInfo
+    puts 'please enter your name player'
+    name = gets.chomp
     puts 'please enter your nationality from the list: "French, German, Spanish, Italian, American, Russian"'
-    
-    runGameLoop
+    ident = gets.chomp
+
+    player = Spy.new(name, ident)
+    @players.push(player)
   end
 
   def runGameLoop
